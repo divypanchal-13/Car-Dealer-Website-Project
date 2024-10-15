@@ -1,4 +1,4 @@
-``` 
+``` cmd
 venv\Scripts\activate 
 
 python manage.py makemigrations
