@@ -1,0 +1,89 @@
+asgiref==3.2.10
+certifi==2020.6.20
+chardet==3.0.4
+defusedxml==0.6.0
+dj-database-url==0.5.0
+Django==3.0.7
+django-allauth==0.42.0
+django-ckeditor==5.9.0
+django-js-asset==1.2.2
+django-multiselectfield==0.1.12
+gunicorn==20.0.4
+idna==2.10
+oauthlib==3.1.0
+Pillow
+psycopg2==2.8.6
+psycopg2-binary==2.8.6
+python3-openid==3.2.0
+pytz==2020.1
+requests==2.24.0
+requests-oauthlib==1.3.0
+sqlparse==0.3.1
+urllib3==1.25.9
+whitenoise==5.1.0
+
+
+
+# The error you're encountering indicates that the `project_dump.json` file you're trying to load contains data related to the `socialaccount` app, which is not currently installed in your Django project.
+
+# Here's how you can resolve this issue:
+
+# ### 1. Install the Missing App
+# Since the `project_dump.json` file references `socialaccount.socialapp`, you need to ensure that the `django-allauth` package, which includes `socialaccount`, is installed and included in your project.
+
+# #### Install `django-allauth`
+# If it's not already installed, you can install it using pip:
+
+# ```bash
+# pip install django-allauth
+# ```
+
+# #### Add `socialaccount` to `INSTALLED_APPS`
+# Next, include the `socialaccount` app in your `INSTALLED_APPS` setting in `settings.py`:
+
+# ```python
+# INSTALLED_APPS = [
+#     ...
+#     'allauth',
+#     'allauth.account',
+#     'allauth.socialaccount',  # Add this line
+#     ...
+# ]
+# ```
+
+# ### 2. Migrate the Database
+# # After adding the `socialaccount` app, run the migrations to set up the necessary database tables:
+
+# # ```bash
+# python manage.py migrate
+# # ```
+
+# ### 3. Reload the Data
+# # Once you've done the above, you can try loading the `project_dump.json` file again:
+
+# # ```bash
+# python manage.py loaddata project_dump.json
+# # ```
+
+### If You Don't Need `socialaccount`
+# If you don't need `socialaccount` and want to exclude the related data:
+
+# 1. **Edit `project_dump.json`**: Open the `project_dump.json` file in a text editor and remove any entries related to `socialaccount`. These entries will have `"model": "socialaccount.socialapp"` or similar.
+
+# 2. **Save and Retry**: After editing, save the file and run the `loaddata` command again.
+
+
+
+# By following these steps, you should be able to load the data without encountering errors related to the `socialaccount` app.
+
+venv\Scripts\activate
+ python manage.py makemigrations
+# # python manage.py loaddata project_dump.json
+ python manage.py migrate
+# # python manage.py createsuperuser
+python manage.py runserver
+
+
+admindivy
+divy122@gmail.com
+helloDivy
