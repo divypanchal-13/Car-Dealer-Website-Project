@@ -10,9 +10,11 @@ venv\Scripts\activate
 ```cmd
 python manage.py makemigrations 
 ```
-## Create new migrations based on changes to models python manage.py migrate 
-## Apply migrations to the database
-
+## Create new migrations based on changes to models 
+Apply migrations to the database
+```cmd
+ python manage.py migrate
+```
 ## Creating a Superuser
 ```cmd
 python manage.py createsuperuser
