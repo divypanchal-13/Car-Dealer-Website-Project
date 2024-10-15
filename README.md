@@ -1,4 +1,4 @@
-﻿# **Car-Dealer-Website-Project**
+﻿# _**Car-Dealer-Website-Project**_
 
 ## Run commands in your terminal
 This document provides the essential commands to manage your Django project within a virtual environment.
